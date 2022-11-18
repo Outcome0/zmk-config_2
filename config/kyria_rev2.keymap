@@ -33,10 +33,10 @@
 		default_layer {
 // QWERTY Layout
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  F    |  P   |   B   |                                          |   J   |  L    |  U    |  Y   |   ;   | BkSp |
-// |  CTRL |  A  |  R  |  S    |  T   |   G   |                                          |   M   |  N    |  E    |  I   |   O   | ENT  |
-// | SHIFT |  Z  |  X  |  C    |  D   |   V   |  BkSp   |  ENTER  |  |  R GUI  |   TAB   |   K   |  H    |  ,    |  .   |   /   | SHFT |
-//                     | CONTR | ALT  | SPACE |  RAISE  |  LOWER  |  |  CONTR  |  LOWER  | SPACE | RCTL  | BLUET |
+// |  ESC  |  Q  |  W  |  E    |  R   |   T   |                                          |   Y   |  U    |  I    |  O   |   P   | BkSp |
+// |  TAB  |  A  |  S  |  D    |  F   |   G   |                                          |   H   |  J    |  K    |  L   |   ;   |  '   |
+// | SHIFT |  Z  |  X  |  C    |  V   |   B   |  LOWER   |  ENTER  |  |  R GUI  |  RAISE |   N   |  M    |  ,    |  .   |   /   | SHFT |
+//                     | CTRL  | LGUI  | LALT |  SPACE   |  LOWER  |  |  CONTR  |  SPACE | SPACE | RCTL  | BLUET |
 			bindings = <
 	&kp TAB    &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
 	&kp LCTRL  &kp A &kp R &kp S &kp T &kp G                                                &kp M &kp N  &kp E     &kp I   &kp O    &kp ENTER
