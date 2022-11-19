@@ -41,7 +41,7 @@
 	&kp TAB    &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
 	&kp LCTRL  &kp A &kp R &kp S &kp T &kp G                                                &kp M &kp N  &kp E     &kp I   &kp O    &kp ENTER
 	&kp LSHFT  &kp Z &kp X &kp C &kp D &kp V      &kp BSPC  &kp ENTER     &kp RGUI &kp TAB  &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-	              &tog CONTROL &kp LALT &kp SPACE &mo RAISE &mo LOWER     &mo CONTROL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
+	              &tog LCTRL &kp LALT &kp SPACE &mo RAISE &mo LOWER     &mo RCTRL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp LEFT RIGHT>;
@@ -75,7 +75,7 @@
 	&kp TAB    &kp ESC &kp W    &kp PG_UP &kp GRAVE &kp B                                         &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp LBKT &kp KP_NUM
 	&kp LCTRL  &kp A   &kp HOME &kp PG_DN &kp END   &kp G                                         &kp DLLR &kp PRCNT &kp CARET &kp APOS  &kp RBKT &kp CAPS
 	&kp LSHFT  &kp Z   &kp FSLH &kp MINUS &kp EQUAL &kp V &kp DEL &kp LGUI   &kp INS     &kp TAB  &kp EXCL &kp AT    &kp HASH  &kp PSCRN &kp SLCK &kp RSHFT
-	                   &tog CONTROL &kp LALT &kp SPACE &mo RAISE &mo LOWER   &mo CONTROL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
+	                   &tog LCTRL &kp LALT &kp SPACE &mo RAISE &mo LOWER   &mo RCTRL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp RIGHT LEFT>;
@@ -92,7 +92,7 @@
 	&kp TAB    &kp T  &kp Q  &kp W  &kp E  &kp R                                                &kp PG_UP &kp HOME &kp UP    &kp END   &kp LC(C) &kp BSPC
 	&kp LCTRL  &kp G  &kp A  &kp S  &kp D  &kp F                                                &kp PG_DN &kp LEFT &kp DOWN  &kp RIGHT &kp LC(V) &kp ENTER
 	&kp LSHFT  &kp N5 &kp N4 &kp N3 &kp N2 &kp N1 &kp N6    &kp LGUI          &kp RGUI &kp TAB  &kp K     &kp H    &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-	              &tog CONTROL &kp LALT &kp SPACE &mo RAISE &mo LOWER     &mo CONTROL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
+	              &tog LCTRL &kp LALT &kp SPACE &mo RAISE &mo LOWER     &mo RCTRL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp RIGHT LEFT>;
@@ -109,7 +109,7 @@
 	&kp TAB    &kp Q &rgb_ug RGB_EFR &rgb_ug RGB_TOG &rgb_ug RGB_EFF &kp B                                                    &bt BT_SEL 0 &kp L      &bt BT_CLR &kp Y      &kp SEMI &kp BSPC
 	&kp LCTRL  &kp A &rgb_ug RGB_SPI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI                                          &bt BT_SEL 1 &kp N      &kp E      &kp I      &kp O    &kp ENTER
 	&kp LSHFT  &kp Z &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &kp BSPC &kp LGUI   &kp RGUI    &kp TAB  &bt BT_SEL 2 &bt BT_NXT &kp COMMA  &bt BT_PRV &kp FSLH &kp RSHFT
-	                                                &tog CONTROL &kp LALT &kp SPACE &mo RAISE &mo LOWER  &mo CONTROL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
+	                                                &tog LCTRL &kp LALT &kp SPACE &mo RAISE &mo LOWER  &mo RCTRL &mo LOWER &kp SPACE &kp RCTRL &tog BLUET
 			>;
 
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp RIGHT LEFT>;
