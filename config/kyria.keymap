@@ -26,6 +26,7 @@
 		init-delay-ms = <150>;
 	};
 
+/{
 	&left_encoder {
 		resolution = <1>;
 	};
