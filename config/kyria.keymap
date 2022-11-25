@@ -25,14 +25,15 @@
 		control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
 		init-delay-ms = <150>;
 	};
+/{
+	&left_encoder {
+		resolution = <1>;
+		};
 
-&left_encoder {
-    resolution = <2>;
-};
-
-&right_encoder {
-    resolution = <2>;
-};
+/{
+	&right_encoder {
+		resolution = <1>;
+		};
 
 // &mt {
 //	flavor = "tap-preferred";
@@ -77,9 +78,9 @@
     	    tri_layer {
       	      if-layers = <1 2>;
        	      then-layer = <3>;
-       	};
-    };
-};
+       		};
+   	};
+	};
 / {
     macros {
         MACRO_0: M0 {
