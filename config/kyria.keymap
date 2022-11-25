@@ -25,53 +25,7 @@
 		control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
 		init-delay-ms = <150>;
 	};
-/ {
-	&left_encoder {
-		resolution = <1>;
-		};
 
-/ {
-	&right_encoder {
-		resolution = <1>;
-		};
-
-// &mt {
-//	flavor = "tap-preferred";
-// };
-
-// &lt {
-// 	flavor = "tap-preferred";
-// };
-	
-//	behaviors {
-//		mtp: mod_tap_permissive {
-//			compatible = "zmk,behavior-hold-tap";
-//			label = "MOD_TAP_PERMISSIVE";
-//			#binding-cells = <2>;
-//			flavor = "balanced";
-//			tapping-term-ms = <200>;
-//			quick-tap-ms = <0>;
-//			bindings = <&kp>, <&kp>;
-//		};
-//		mto: mod_tap_other_hold {
-//			compatible = "zmk,behavior-hold-tap";
-//			label = "MOD_TAP_OTHER_HOLD";
-//			#binding-cells = <2>;
-//			flavor = "hold-preferred";
-//			tapping-term-ms = <200>;
-//			quick-tap-ms = <0>;
-//			bindings = <&kp>, <&kp>;
-//		};
-//		lto: layer_tap_other_hold {
-//			compatible = "zmk,behavior-hold-tap";
-//			label = "LAYER_TAP_OTHER_HOLD";
-//			#binding-cells = <2>;
-//			flavor = "hold-preferred";
-//			tapping-term-ms = <200>;
-//			quick-tap-ms = <0>;
-//			bindings = <&mo>, <&kp>;
-//		};
-//	};
 	/ {
   	  conditional_layers {
     	    compatible = "zmk,conditional-layers";
@@ -80,7 +34,7 @@
        	      then-layer = <3>;
        		};
    	};
-	};
+};
 / {
     macros {
         MACRO_0: M0 {
