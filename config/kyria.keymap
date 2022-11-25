@@ -26,14 +26,13 @@
 		init-delay-ms = <150>;
 	};
 
-/{
-	&left_encoder {
-		resolution = <1>;
-	};
+&left_encoder {
+    resolution = <2>;
+};
 
-	&right_encoder {
-		resolution = <1>;
-	};
+&right_encoder {
+    resolution = <2>;
+};
 
 // &mt {
 //	flavor = "tap-preferred";
