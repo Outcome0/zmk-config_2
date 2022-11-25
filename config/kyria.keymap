@@ -25,12 +25,12 @@
 		control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
 		init-delay-ms = <150>;
 	};
-/{
+/ {
 	&left_encoder {
 		resolution = <1>;
 		};
 
-/{
+/ {
 	&right_encoder {
 		resolution = <1>;
 		};
