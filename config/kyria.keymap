@@ -22,36 +22,33 @@
 	left_encoder: encoder_left {
         	compatible = "alps,ec11";
         	label = "LEFT_ENCODER";
-        	a-gpios = <20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-       		b-gpios = <19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	a-gpios = <&pro_micro20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+       		b-gpios = <&pro_micro19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         	resolution = <1>;
     };
 
 	right_encoder: encoder_right {
         	compatible = "alps,ec11";
         	label = "RIGHT_ENCODER";
-        	a-gpios = <19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        	b-gpios = <20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	a-gpios = <&pro_micro19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	b-gpios = <&pro_micro20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         	resolution = <1>;
     	};
 };
-// Encoder resolutions
-// &left_encoder   { resolution = <1>; };
-// &right_encoder  { resolution = <1>; };
 
 // None/Trans
 #define _____ &none
 #define t____ &trans
 
 //On hold until understanding which GPIO is excatly what I want for the tog to be on my Left Kyria as the encoder push button using poisition MX6A Row 0 Col 7
-// / {
-//	ext-power {
-//		compatible = "zmk,ext-power-generic";
-//		label = "EXT_POWER";
-//		control-gpios = <&gpio7 18 GPIO_ACTIVE_HIGH>;
-//		init-delay-ms = <150>;
-//	};
-// };
+/ {
+	ext-power {
+		compatible = "zmk,ext-power-generic";
+		label = "EXT_POWER";
+		control-gpios = <&gpio7 18 GPIO_ACTIVE_HIGH>;
+		init-delay-ms = <150>;
+	};
+ };
 
 / {
     conditional_layers {
