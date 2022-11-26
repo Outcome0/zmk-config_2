@@ -121,8 +121,8 @@
 			bindings = <
 	&none &kp GRAVE &none &none &none &kp LPAR                                                             &kp RPAR &none &none &none  &kp BSPC &kp DEL
 	&kp CAPS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                                               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
-	&kp LSHFT &none &kp none &kp none &kp none &kp DLLR &kp C_AL_TASK_MANAGER &none        &none &kp none &kp PIPE &kp MINUS &kp LBKT &kp RBKT &kp EXCL &kp RSHFT
-	                   &trans &trans &trans &kp trans &tog LOWER                           &tog RAISE &kp SPACE &none &none &to CONTROL
+	&kp LSHFT &none &none &none &none &kp DLLR &kp C_AL_TASK_MANAGER &none        &none &none &kp PIPE &kp MINUS &kp LBKT &kp RBKT &kp EXCL &kp RSHFT
+	                   &trans &trans &trans &trans &tog LOWER                           &tog RAISE &kp SPACE &none &none &to CONTROL
 			>;
 //Media Controls Rewind and Fast Foward on Left Encoder | Application Controls Backward and Forward Right Encoder
 			sensor-bindings = <&inc_dec_kp C_RW C_FF &inc_dec_kp K_BACK K_FORWARD>;
@@ -153,9 +153,9 @@
 // | SHIFT | NONE | NONE | NONE | NONE | NONE | NONE  |  NONE |           |  NONE  |   NONE   | BRD   | BRI | EFR | EFF |  SPD  | SPI |
 //                                | NONE | NONE  | NONE | NONE| NONE |    |  NONE  |   NONE   | NONE  | NONE | Control|
 			bindings = <
-	&ext_power EP_TOG &none &none &ext_power EP_TOG &none &none                      &bt BT_SEL 0 &kp L      &bt BT_CLR &kp Y      &kp SEMI &kp BSPC
-	&kp TAB  &none &none &none &none &none                                           &bt BT_SEL 1 &kp N      &kp E      &kp I      &kp O    &rgb_ug RGB_TOG
-	&kp LSHFT  &none &none &none &none &none &none &none     &none &none  &  &kp TAB  &bt BT_SEL 2 &bt BT_NXT &kp COMMA  &bt BT_PRV &kp FSLH &kp RSHFT
+	&ext_power EP_TOG &none &none &ext_power EP_TOG &none &none            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR
+	&kp TAB  &none &none &none &none &none                                &rgb_ug RGB_SAD  &rgb_ug RGB_SAI &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_COLOR_HSB(308, 100, 78) &rgb_ug RGB_TOG
+	&kp LSHFT  &none &none &none &none &none &none &none     &none &none  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFR &rgb_ug RGB_EFF  &rgb_ug RGB_SPD &rgb_ug RGB_SPI 
 	                   &none &none &none &none &none         &none &none &none &none &to CONTROL
 			>;
 //Consumer Controls Channel Decrement and Channel Increment  | Keypressess Bluetooth Previous Profile and Next Profile
