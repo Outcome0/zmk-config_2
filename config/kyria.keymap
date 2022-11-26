@@ -119,7 +119,7 @@
 // | SHIFT |  NONE  | NONE  | NONE | NONE |  $   | Task Manager | NONE |          |  NONE |  NONE   |   PIPE  | MINUS |  LBKT | RBKT |  !   | SHFT |
 //                     | TRANS | TRANS | TRANS   | SPACE        | LOWER|          | RAISE |  SPACE  |   NONE  | NONE  |Control|
 			bindings = <
-	&none &kp GRAVE &none &none &kp none &kp LPAR                                                             &kp RPAR &none &none &none  &kp BSPC &kp DEL
+	&none &kp GRAVE &none &none &none &kp LPAR                                                             &kp RPAR &none &none &none  &kp BSPC &kp DEL
 	&kp CAPS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                                               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
 	&kp LSHFT &none &kp none &kp none &kp none &kp DLLR &kp C_AL_TASK_MANAGER &none        &none &kp none &kp PIPE &kp MINUS &kp LBKT &kp RBKT &kp EXCL &kp RSHFT
 	                   &trans &trans &trans &kp trans &tog LOWER                           &tog RAISE &kp SPACE &none &none &to CONTROL
