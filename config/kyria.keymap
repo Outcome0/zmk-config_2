@@ -19,21 +19,22 @@
 #define CONTROL	4
 
 // Encoder resolutions
-&left_encoder   { resolution = <1>; };
-&right_encoder  { resolution = <1>; };
+// &left_encoder   { resolution = <1>; };
+// &right_encoder  { resolution = <1>; };
 
 // None/Trans
 #define _____ &none
 #define t____ &trans
 
-/ {
-	ext-power {
-		compatible = "zmk,ext-power-generic";
-		label = "EXT_POWER";
-		control-gpios = <&gpio21 20 GPIO_ACTIVE_HIGH>;
-		init-delay-ms = <150>;
-	};
-};
+//On hold until understanding which GPIO is excatly what I want for the tog to be on my Left Kyria as the encoder push button using poisition MX6A Row 0 Col 7
+// / {
+//	ext-power {
+//		compatible = "zmk,ext-power-generic";
+//		label = "EXT_POWER";
+//		control-gpios = <&gpio21 20 GPIO_ACTIVE_HIGH>;
+//		init-delay-ms = <150>;
+//	};
+// };
 
 / {
     conditional_layers {
@@ -148,12 +149,12 @@
 		control_layer {
 // Bluetooth and RGB command layer. Access with LOWER+CONTROL or toggle. 3 profiles!
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  EP_TOG |  NONE  | NONE | EP_TOG | NONE | NONE |                                         | BT 0  | BT 1 | BT 2 |   BT PRV   |   BT NEXT  | BT CLEAR |
+// |  &ext_power EP_TOG |  NONE  | NONE | EP_TOG | NONE | NONE |                                         | BT 0  | BT 1 | BT 2 |   BT PRV   |   BT NEXT  | BT CLEAR |
 // |  TAB |  NONE | NONE | NONE | NONE | NONE |                                               | SAD   | SAI |  HUD |   HUI  |  HSB  | RGB TOG |
 // | SHIFT | NONE | NONE | NONE | NONE | NONE | NONE  |  NONE |           |  NONE  |   NONE   | BRD   | BRI | EFR | EFF |  SPD  | SPI |
 //                                | NONE | NONE  | NONE | NONE| NONE |    |  NONE  |   NONE   | NONE  | NONE | Control|
 			bindings = <
-	&ext_power EP_TOG &none &none &ext_power EP_TOG &none &none            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR
+	&none &none &none &none &none &none            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR
 	&kp TAB  &none &none &none &none &none                                &rgb_ug RGB_SAD  &rgb_ug RGB_SAI &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_COLOR_HSB(308, 100, 78) &rgb_ug RGB_TOG
 	&kp LSHFT  &none &none &none &none &none &none &none     &none &none  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFR &rgb_ug RGB_EFF  &rgb_ug RGB_SPD &rgb_ug RGB_SPI 
 	                   &none &none &none &none &none         &none &none &none &none &to CONTROL
