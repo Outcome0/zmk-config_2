@@ -20,8 +20,8 @@
 #define CONTROL	4
 
 // Encoder resolutions
-&left_encoder   { resolution = <2>; };
-&right_encoder  { resolution = <4>; };
+&left_encoder   { resolution = <1>; };
+&right_encoder  { resolution = <1>; };
 
 // None/Trans
 #define _____ &none
