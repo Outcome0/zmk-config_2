@@ -29,11 +29,13 @@ endif # ZMK_DISPLAY
 
 if LVGL
 
-config LVGL_HOR_RES_MAX
-	default 128
+// Commented out to be like Pete Johanson file
+// config LVGL_HOR_RES_MAX
+//	default 128
 
-config LVGL_VER_RES_MAX
-	default 64
+// Commented out to be like Pete Johanson file
+// config LVGL_VER_RES_MAX
+//	default 64
 
 config LVGL_VDB_SIZE
 	default 64
