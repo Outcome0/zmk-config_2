@@ -18,6 +18,23 @@
 #define ADJUST  3
 #define CONTROL	4
 
+/ {
+	left_encoder: encoder_left {
+        	compatible = "alps,ec11";
+        	label = "LEFT_ENCODER";
+        	a-gpios = <20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+       		b-gpios = <19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	resolution = <1>;
+    };
+
+	right_encoder: encoder_right {
+        	compatible = "alps,ec11";
+        	label = "RIGHT_ENCODER";
+        	a-gpios = <19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	b-gpios = <20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	resolution = <1>;
+    	};
+};
 // Encoder resolutions
 // &left_encoder   { resolution = <1>; };
 // &right_encoder  { resolution = <1>; };
