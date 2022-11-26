@@ -105,7 +105,7 @@
 	&none    &kp PG_UP &kp HOME &kp UP &kp END &kp KP_MULTIPLY                                                  &kp KP_DIVIDE &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp BSPC &kp KP_CLEAR
 	&kp TAB  &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT  &kp KP_PLUS                                                &kp KP_MINUS &kp KP_N4 &kp KP_N5 &kp KP_N6 &none &kp EQUAL
 	&kp LSHFT &kp C_VOL_DN &kp C_VOL_UP  &kp C_MUTE  &none  &kp DLLR  &none &none     &kp BSPC &kp DEL &kp KP_DOT  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_COMMA &kp KP_ENTER
-	                     &trans &trans &trans &trans &tog LOWER                    &tog RAISE &KP SPACE &kp KP_N0 &kp KP_EQUAL &to CONTROL
+	                     &trans &trans &trans &trans &tog LOWER                    &tog RAISE &kp SPACE &kp KP_N0 &kp KP_EQUAL &to CONTROL
 			>;
 //Application controls Zoom In and Zoom Out Left Encoder |  Keypresses Backspace and Delete Right Encoder
 			sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN &inc_dec_kp BSPC DEL>;
