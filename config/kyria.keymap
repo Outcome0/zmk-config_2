@@ -18,72 +18,12 @@
 #define ADJUST  3
 #define CONTROL	4
 
-// / {
-//	left_encoder: encoder_left {
-//        	compatible = "alps,ec11";
-//        	label = "LEFT_ENCODER";
-//        	a-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//     		b-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//        	resolution = <1>;
-//  };
-
-//	right_encoder: encoder_right {
-//        	compatible = "alps,ec11";
-//        	label = "RIGHT_ENCODER";
-//        	a-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//        	b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//        	resolution = <1>;
-//    	};
-// };
-
-// None/Trans
-// #define _____ &none
-// #define t____ &trans
-
-//On hold until understanding which GPIO is excatly what I want for the tog to be on my Left Kyria as the encoder push button using poisition MX6A Row 0 Col 7
-// / {
-//	ext-power {
-//		compatible = "zmk,ext-power-generic";
-//		label = "EXT_POWER";
-//		control-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
-//		init-delay-ms = <150>;
-//	};
-// };
-
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
-        };
-    };
-};
-/ {
-    macros {
-        M0: M0 {
-            label = "M0";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-	    wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &kp M>
-                , <&macro_release &kp LGUI>
-                ;
-        };
-	M1: M1 {
-            label = "M1";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-	    wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &kp TAB>
-                , <&macro_release &kp LGUI>
-                ;
         };
     };
 };
