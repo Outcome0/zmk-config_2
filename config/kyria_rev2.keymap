@@ -17,44 +17,12 @@
 #define ADJUST  3
 #define CONTROL	4
 
-// None/Trans
-#define _____ &none
-#define t____ &trans
-
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
-        };
-    };
-};
-/ {
-    macros {
-        M0: M0 {
-            label = "M0";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-	    wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &kp M>
-                , <&macro_release &kp LGUI>
-                ;
-        };
-	M1: M1 {
-            label = "M1";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-	    wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &kp TAB>
-                , <&macro_release &kp LGUI>
-                ;
         };
     };
 };
@@ -68,12 +36,12 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E    |  R   |   T   |                                          |   Y   |  U    |  I    |  O   |   P   | BkSp |
 // |  TAB  |  A  |  S  |  D    |  F   |   G   |                                          |   H   |  J    |  K    |  L   |   ;   |  '   |
-// | SHIFT |  Z  |  X  |  C    |  V   |   B   |  CALC | PRINT SCREEN|  |   M0    |   M1  |   N   |  M    |  ,    |  .   |   /   | SHFT |
+// | SHIFT |  Z  |  X  |  C    |  V   |   B   |CALC TO BE|PRINT SCREEN TO BE|  |M0 (to be)|M1(to be)|   N   |  M    |  ,    |  .   |   /   | SHFT |
 //                     | LCTRL  | LGUI  | LALT |  SPACE   |  LOWER  |  |  RAISE  |  SPACE | ENTER | MY PC  | CONTROL |
 			bindings = <
 	&kp ESC    &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P          &kp BSPC
 	&kp TAB    &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMICOLON  &kp APOSTROPHE
-	&kp LSHFT  &kp Z &kp X &kp C &kp V &kp B  &kp C_AL_CALC  &kp PRINTSCREEN  &M0 &M1  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+	&kp LSHFT  &kp Z &kp X &kp C &kp V &kp B &kp DOWN &kp UP         &kp LEFT &kp RIGHT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
 	              &kp LCTRL &kp LGUI &kp LALT &kp SPACE &tog LOWER     &tog RAISE &kp SPACE &kp ENTER &kp C_AL_MY_COMPUTER &to CONTROL
 			>;
 //Keypresses Volume Down and Volume Up Left Encoder  |  Keypressess Backspace and Delete Right Encoder
@@ -102,12 +70,12 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  NONE  | GRAVE |  NONE | NONE | NONE |  (   |                                            |   )     | NONE  | NONE  | NONE | BKSP | DEL |
 // |  CAPS  |  1 !  |  2 @  |  3 # | 4 $  |  5 % |                                            |   6 ^    |  7 & |  8 *  |  9 ( |  0 ) | \ |  |
-// | SHIFT |  NONE  | NONE  | NONE | NONE |  $   | Task Manager | NONE |          |  NONE |  NONE   |   PIPE  | MINUS |  LBKT | RBKT |  !   | SHFT |
+// | SHIFT |  NONE  | NONE  | NONE | NONE |  $   | Task Manager | &kp PRINTSCREEN | &kp C_AL_CALC |  NONE |  NONE   |   PIPE  | MINUS |  LBKT | RBKT |  !   | SHFT |
 //                     | TRANS | TRANS | TRANS   | SPACE        | LOWER|          | RAISE |  SPACE  |   NONE  | NONE  |Control|
 			bindings = <
 	&none &kp GRAVE &none &none &none &kp LPAR                                                             &kp RPAR &none &none &none  &kp BSPC &kp DEL
 	&kp CAPS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                                               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
-	&kp LSHFT &none &none &none &none &kp DLLR &kp C_AL_TASK_MANAGER &none        &none &none &kp PIPE &kp MINUS &kp LBKT &kp RBKT &kp EXCL &kp RSHFT
+	&kp LSHFT &none &none &none &none &kp DLLR &kp C_AL_TASK_MANAGER &kp PRINTSCREEN        &kp C_AL_CALC &none &kp PIPE &kp MINUS &kp LBKT &kp RBKT &kp EXCL &kp RSHFT
 	                   &trans &trans &trans &trans &tog LOWER                           &tog RAISE &kp SPACE &none &none &to CONTROL
 			>;
 //Media Controls Rewind and Fast Foward on Left Encoder | Application Controls Backward and Forward Right Encoder
@@ -134,12 +102,12 @@
 		control_layer {
 // Bluetooth and RGB command layer. Access with LOWER+CONTROL or toggle. 3 profiles!
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  &ext_power EP_TOG |  NONE  | NONE | EP_TOG | NONE | NONE |                                         | BT 0  | BT 1 | BT 2 |   BT PRV   |   BT NEXT  | BT CLEAR |
+// |&ext_power EP_TOG TOBE|  NONE  | NONE | EP_TOG TOBE| NONE | NONE |                                         | BT 0  | BT 1 | BT 2 |   BT PRV   |   BT NEXT  | BT CLEAR |
 // |  TAB |  NONE | NONE | NONE | NONE | NONE |                                               | SAD   | SAI |  HUD |   HUI  |  HSB  | RGB TOG |
 // | SHIFT | NONE | NONE | NONE | NONE | NONE | NONE  |  NONE |           |  NONE  |   NONE   | BRD   | BRI | EFR | EFF |  SPD  | SPI |
 //                                | NONE | NONE  | NONE | NONE| NONE |    |  NONE  |   NONE   | NONE  | NONE | Control|
 			bindings = <
-	&none &none &none &none &none &none            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR
+	&none &none &none &none &none &none                                   &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR
 	&kp TAB  &none &none &none &none &none                                &rgb_ug RGB_SAD  &rgb_ug RGB_SAI &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_COLOR_HSB(308, 100, 78) &rgb_ug RGB_TOG
 	&kp LSHFT  &none &none &none &none &none &none &none     &none &none  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFR &rgb_ug RGB_EFF  &rgb_ug RGB_SPD &rgb_ug RGB_SPI 
 	                   &none &none &none &none &none         &none &none &none &none &to CONTROL
