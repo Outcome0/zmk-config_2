@@ -41,14 +41,14 @@
 #define t____ &trans
 
 //On hold until understanding which GPIO is excatly what I want for the tog to be on my Left Kyria as the encoder push button using poisition MX6A Row 0 Col 7
-/ {
-	ext-power {
-		compatible = "zmk,ext-power-generic";
-		label = "EXT_POWER";
-		control-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
-		init-delay-ms = <150>;
-	};
- };
+// / {
+//	ext-power {
+//		compatible = "zmk,ext-power-generic";
+//		label = "EXT_POWER";
+//		control-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
+//		init-delay-ms = <150>;
+//	};
+// };
 
 / {
     conditional_layers {
