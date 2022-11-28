@@ -37,12 +37,12 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E    |  R   |   T   |                                          |   Y   |  U    |  I    |  O   |   P   | BkSp |
 // |  TAB  |  A  |  S  |  D    |  F   |   G   |                                          |   H   |  J    |  K    |  L   |   ;   |  '   |
-// | SHIFT |  Z  |  X  |  C    |  V   |   B   |  CALC | PRINT SCREEN|  |   M0    |   M1  |   N   |  M    |  ,    |  .   |   /   | SHFT |
+// | SHIFT |  Z  |  X  |  C    |  V   |   B   |CALC tobe|PRINT SCREEN tobe|  |   M0 tobe |   M1 tobe|   N   |  M    |  ,    |  .   |   /   | SHFT |
 //                     | LCTRL  | LGUI  | LALT |  SPACE   |  LOWER  |  |  RAISE  |  SPACE | ENTER | MY PC  | CONTROL |
 			bindings = <
 	&kp ESC    &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P          &kp BSPC
 	&kp TAB    &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMICOLON  &kp APOSTROPHE
-	&kp LSHFT  &kp Z &kp X &kp C &kp V &kp B  &kp C_AL_CALC  &kp PRINTSCREEN  &M0 &M1  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+	&kp LSHFT  &kp Z &kp X &kp C &kp V &kp B  &kp DOWN  &kp UP  &kp LEFT &kp RIGHT  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
 	              &kp LCTRL &kp LGUI &kp LALT &kp SPACE &tog LOWER     &tog RAISE &kp SPACE &kp ENTER &kp C_AL_MY_COMPUTER &to CONTROL
 			>;
 //Keypresses Volume Down and Volume Up Left Encoder  |  Keypressess Backspace and Delete Right Encoder
