@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT 0
 #define LOWER   1
@@ -88,30 +87,30 @@
 // | SHIFT |  NONE  |  NONE  | NONE | NONE | NONE | NONE | NONE |         | NONE |  NONE | NONE | NONE | NONE | NONE | NONE | SHFT |
 //                     | TRANS | TRANS | TRANS |  SPACE  |  LOWER  |      | RAISE |SPACE | NONE | NONE |Control|
 			bindings = <
-	&none &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                                                &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &none
-	&kp TAB  &kp F1 &none  &none  &none &none                                                   &none  &none  &none  &none   &kp F12 &none
-	&kp LSHFT  &none &none &none  &none &none &none &none        &none &none &none  &none  &none &none  &none  &kp RSHFT
-	              &trans &trans &trans &kp SPACE &tog LOWER      &tog RAISE &kp SPACE &none &none &to CONTROL
+	&none &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                                       &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &none
+	&kp TAB  &kp F1 &none  &none  &none &none                                          &none  &none  &none  &none   &kp F12 &none
+	&kp LSHFT  &none &none &none  &none &none &none &bt BT_CLR   &bt BT_PRV &bt BT_NXT &none  &none  &none &none  &none  &kp RSHFT
+	              &trans &trans &trans &kp SPACE &tog LOWER      &tog RAISE &kp SPACE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2
 			>;
 //Keypressess Arrow Left and Arrow Right  | Keypress Arrow Down and Arrow Up
 			sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
 		};
+	};
+};
 
-		control_layer {
+//		control_layer {
 // Bluetooth and RGB command layer. Access with LOWER+CONTROL or toggle. 3 profiles!
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  &ext_power EP_TOG |  NONE  | NONE | EP_TOG | NONE | NONE |                                         | BT 0  | BT 1 | BT 2 |   BT PRV   |   BT NEXT  | BT CLEAR |
 // |  TAB |  NONE | NONE | NONE | NONE | NONE |                                               | SAD   | SAI |  HUD |   HUI  |  HSB  | RGB TOG |
 // | SHIFT | NONE | NONE | NONE | NONE | NONE | NONE  |  NONE |           |  NONE  |   NONE   | BRD   | BRI | EFR | EFF |  SPD  | SPI |
 //                                | NONE | NONE  | NONE | NONE| NONE |    |  NONE  |   NONE   | NONE  | NONE | Control|
-			bindings = <
-	&none &none &none &none &none &none            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR
-	&kp TAB  &none &none &none &none &none                                &rgb_ug RGB_SAD  &rgb_ug RGB_SAI &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_COLOR_HSB(308, 100, 78) &rgb_ug RGB_TOG
-	&kp LSHFT  &none &none &none &none &none &none &none     &none &none  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFR &rgb_ug RGB_EFF  &rgb_ug RGB_SPD &rgb_ug RGB_SPI 
-	                   &none &none &none &none &none         &none &none &none &none &to CONTROL
-			>;
+//			bindings = <
+//	&none &none &none &none &none &none            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT &bt BT_CLR
+//	&kp TAB  &none &none &none &none &none                                &rgb_ug RGB_SAD  &rgb_ug RGB_SAI &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_COLOR_HSB(308, 100, 78) &rgb_ug RGB_TOG
+//	&kp LSHFT  &none &none &none &none &none &none &none     &none &none  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFR &rgb_ug RGB_EFF  &rgb_ug RGB_SPD &rgb_ug RGB_SPI 
+//	                   &none &none &none &none &none         &none &none &none &none &to CONTROL
+//			>;
 //Consumer Controls Channel Decrement and Channel Increment  | Keypressess Bluetooth Previous Profile and Next Profile
-			sensor-bindings = <&inc_dec_kp C_CHANNEL_DEC C_CHANNEL_INC &inc_dec_kp BT_PRV BT_NXT>;
-		};
-	};
-};
+//			sensor-bindings = <&inc_dec_kp C_CHANNEL_DEC C_CHANNEL_INC &inc_dec_kp BT_PRV BT_NXT>;
+//		};
