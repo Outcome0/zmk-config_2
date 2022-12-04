@@ -34,12 +34,12 @@
 // |  ESC  |  Q  |  W  |  E    |  R   |   T   |                                          |   Y   |  U    |  I    |  O   |   P   | BkSp |
 // |  TAB  |  A  |  S  |  D    |  F   |   G   |                                          |   H   |  J    |  K    |  L   |   ;   |  '   |
 // | SHIFT |  Z  |  X  |  C    |  V   |   B   |  CALC tobe | PRINT SCREEN tobe|  |   M0 tobe |   M1 tobe |   N   |  M    |  ,    |  .   |   /   | SHFT |
-//                     | LCTRL  | LGUI  | LALT |  SPACE   |  LOWER  |  |  RAISE  |  SPACE | ENTER | MY PC  | CONTROL |
+//                     | LCTRL  | LGUI  | LALT |  SPACE   |  LOWER  |  |  Dead Switch  |  SPACE | ENTER | MY PC  | CONTROL |
 			bindings = <
 	&kp ESC  &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P          &kp BSPC
 	&kp TAB  &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMICOLON  &kp APOSTROPHE
 	&kp LSHFT  &kp Z &kp X &kp C &kp V &kp B  &kp DOWN &kp UP          &kp LEFT &kp RIGHT  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-	              &kp LCTRL &kp LGUI &kp LALT &kp SPACE &tog LOWER     &kp A &kp SPACE &kp ENTER &kp C_AL_MY_COMPUTER &tog RAISE
+	              &kp LCTRL &kp LGUI &kp LALT &kp SPACE &tog LOWER     &none &kp SPACE &kp ENTER &kp C_AL_MY_COMPUTER &tog RAISE
 			>;
 //Keypresses Volume Down and Volume Up Left Encoder  |  Keypressess Backspace and Delete Right Encoder
 			sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp DEL BSPC>;
@@ -55,8 +55,8 @@
 			bindings = <
 	&none    &kp PG_UP &kp HOME &kp UP &kp END &kp KP_MULTIPLY                                                  &kp KP_DIVIDE &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp BSPC &kp KP_CLEAR
 	&kp TAB  &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT  &kp KP_PLUS                                                &kp KP_MINUS &kp KP_N4 &kp KP_N5 &kp KP_N6 &none &kp EQUAL
-	&kp LSHFT &kp C_VOL_DN &kp C_VOL_UP  &kp C_MUTE  &none  &kp DLLR  &none &none     &kp BSPC &kp DEL &kp KP_DOT  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_COMMA &kp KP_ENTER
-	                     &trans &trans &trans &trans &tog LOWER                    &kp A &kp SPACE &kp KP_N0 &kp KP_EQUAL &tog RAISE
+	&kp LSHFT &kp C_VOL_DN &kp C_VOL_UP  &kp C_MUTE  &none  &kp DLLR  &kp C_AL_CALC &none     &kp BSPC &kp DEL &kp KP_DOT  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_COMMA &kp KP_ENTER
+	                     &trans &trans &trans &trans &tog LOWER                               &none &kp SPACE &kp KP_N0 &kp KP_EQUAL &tog RAISE
 			>;
 //Application controls Zoom In and Zoom Out Left Encoder |  Keypresses Backspace and Delete Right Encoder->CHANGED
 			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
@@ -65,15 +65,15 @@
 		raise_layer {
 // Number row and Punctuation
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  NONE  | GRAVE |  NONE | NONE | NONE |  (   |                                            |   )     | NONE  | NONE  | NONE | BKSP | DEL |
+// |  GRAVE  | NONE |  NONE | NONE | NONE |  (   |                                            |   )     | NONE  | NONE  | NONE | BKSP | DEL |
 // |  CAPS  |  1 !  |  2 @  |  3 # | 4 $  |  5 % |                                            |   6 ^    |  7 & |  8 *  |  9 ( |  0 ) | \ |  |
 // | SHIFT |  NONE  | NONE  | NONE | NONE |  $   | Task Manager | NONE |          |  NONE |  NONE   |   PIPE  | MINUS |  LBKT | RBKT |  !   | SHFT |
 //                     | TRANS | TRANS | TRANS   | SPACE        | LOWER|          | RAISE |  SPACE  |   NONE  | NONE  |Control|
 			bindings = <
-	&none &kp GRAVE &none &none &none &kp LPAR                                                             &kp RPAR &none &none &none  &kp BSPC &kp DEL
+	&kp GRAVE &none &none &none &none &kp LPAR                                                             &kp RPAR &none &none &none  &kp BSPC &kp DEL
 	&kp CAPS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                                               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
 	&kp LSHFT &none &none &none &none &kp DLLR &kp C_AL_TASK_MANAGER &kp C_AL_CALC        &kp PRINTSCREEN &none &kp PIPE &kp MINUS &kp LBKT &kp RBKT &kp EXCL &kp RSHFT
-	                   &trans &trans &trans &trans &tog LOWER                           &kp A &kp SPACE &none &none &tog RAISE
+	                   &trans &trans &trans &trans &tog LOWER                           &none &kp SPACE &none &none &tog RAISE
 			>;
 //Media Controls Rewind and Fast Foward on Left Encoder | Application Controls Backward and Forward Right Encoder
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp DEL BSPC>;
@@ -84,13 +84,13 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  NONE |  F2  |  F3 |  F4  |  F5  |   F6   |                                          | F7 | F8  |  F9   |  F10  | F11 | NONE|
 // |  TAB  |  F1  |  NONE | NONE | NONE | NONE |                                          | NONE | NONE | NONE | NONE | F12 | NONE |
-// | SHIFT |  NONE  |  NONE  | NONE | NONE | NONE | NONE | NONE |         | NONE |  NONE | NONE | NONE | NONE | NONE | NONE | SHFT |
-//                     | TRANS | TRANS | TRANS |  SPACE  |  LOWER  |      | RAISE |SPACE | NONE | NONE |Control|
+// | SHIFT |  test key  |  NONE  | NONE | NONE | NONE | NONE | NONE |         | NONE |  NONE | NONE | NONE | NONE | NONE | NONE | SHFT |
+//                     | TRANS | TRANS | TRANS |  SPACE  |  LOWER  |      | NONE |SPACE | NONE | NONE |Raise|
 			bindings = <
 	&none &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                                       &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &none
 	&kp TAB  &kp F1 &none  &none  &none &none                                          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2   &kp F12 &none
-	&kp LSHFT  &none &none &none  &none &none &none &bt BT_CLR   &bt BT_PRV &bt BT_NXT &none  &none  &none &none  &none  &kp RSHFT
-	              &trans &trans &trans &kp SPACE &tog LOWER      &kp A &kp SPACE &none &none &tog RAISE
+	&kp LSHFT  &kp T &none &none  &none &none &none &bt BT_CLR   &bt BT_PRV &bt BT_NXT &none  &none  &none &none  &none  &kp RSHFT
+	              &trans &trans &trans &none &tog LOWER      &none &none &none &none &tog RAISE
 			>;
 //Keypressess Arrow Left and Arrow Right  | Keypress Arrow Down and Arrow Up->CHANGED TO: Media Controls Rewind and Fast Foward on Left Encoder | Application Controls Backward and Forward Right Encoder
 			sensor-bindings = <&inc_dec_kp C_FF C_RW &inc_dec_kp K_FORWARD K_BACK>;
