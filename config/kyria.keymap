@@ -58,7 +58,7 @@
 	                     &trans &trans &trans &trans &trans                                   &none &none &kp KP_N0 &kp KP_EQUAL &none
 			>;
 //Application controls Zoom In and Zoom Out Left Encoder |  Keypresses Backspace and Delete Right Encoder->CHANGED
-			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
+			sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp DEL BSPC>; 
 		};
 
 		raise_layer {
@@ -75,7 +75,7 @@
 	                   &trans &trans &trans &trans &trans                   &none &kp LEFT &kp DOWN &kp UP &kp RIGHT
 			>;
 //Media Controls Rewind and Fast Foward on Left Encoder | Application Controls Backward and Forward Right Encoder
-			sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp DEL BSPC>;
+			sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
 		};
 
 		adjust_layer {
